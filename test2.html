@@ -10,11 +10,6 @@
   <script>
   function connectDevice() {
     // connect, and ask for the battery percentage
-    Puck.eval("{bat:Puck.getBatteryPercentage()}", function(d,err) {
-      if (!d) {
-        alert("Web Bluetooth connection failed!\n"+(err||""));
-        return;
-      }
       // remove the 'connect' window
       elements.modal.remove();
       // update the controls with the values we received
@@ -23,7 +18,6 @@
       // so we do it separately.
       Puck.eval("history", function(d) {
         elements.temp.setData(d);
-      });
     });
   }
   // Set up the controls we see on the screen    
