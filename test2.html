@@ -9,7 +9,7 @@
   <script src="https://www.puck-js.com/puck.js"></script>  
   <script>
   function connectDevice() {
-   Puck.eval("{bat:getBatteryPercentage()}", function(d,err) {
+   Puck.eval("{bat:E.getTemperature()}", function(d,err) {
       if (!d) {
         alert("Web Bluetooth connection failed!\n"+(err||""));
         return;
